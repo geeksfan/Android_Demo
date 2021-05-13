@@ -2,4 +2,5 @@
     <string name="app_name">HelloWorld</string>
     <string name="tv_test1">张小盒张小盒</string>
     <string name="tv_test2">张小盒张小盒张小盒张小盒张小盒张小盒张小盒张张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒张小盒</string>
+    <string name="bt_test1">按钮</string>
 </resources>

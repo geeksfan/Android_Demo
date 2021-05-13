@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnTextView;
+    private Button mTbnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // 跳转到TextView演示界面
                 Intent intent = new Intent(MainActivity.this, TextViexActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mTbnButton = findViewById(R.id.btn_button);
+        mTbnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ButtonActivity.class);
                 startActivity(intent);
             }
         });
