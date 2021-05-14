@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnTextView;
-    private Button mTbnButton;
+    private Button mBtnButton;
+    private Button mBtnEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mTbnButton = findViewById(R.id.btn_button);
-        mTbnButton.setOnClickListener(new View.OnClickListener() {
+        mBtnButton = findViewById(R.id.btn_button);
+        mBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // 跳转到Button演示界面
                 Intent intent = new Intent(MainActivity.this, ButtonActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBtnEditText = this.<Button>findViewById(R.id.btn_editText);
+        mBtnEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 跳转到EditText演示界面
+                Intent intent = new Intent(MainActivity.this, EditTextActivity.class);
                 startActivity(intent);
             }
         });
