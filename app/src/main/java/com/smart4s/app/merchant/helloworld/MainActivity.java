@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnButton;
     private Button mBtnEditText;
     private Button mBtnRadioButton;
+    private Button mBtnCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnButton = this.<Button>findViewById(R.id.btn_button);
         mBtnEditText = this.<Button>findViewById(R.id.btn_editText);
         mBtnRadioButton = this.<Button>findViewById(R.id.btn_radioButton);
+        mBtnCheckBox = findViewById(R.id.btn_checkBox);
         setListener();
     }
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnButton.setOnClickListener(onClick);
         mBtnEditText.setOnClickListener(onClick);
         mBtnRadioButton.setOnClickListener(onClick);
+        mBtnCheckBox.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -55,9 +58,12 @@ public class MainActivity extends AppCompatActivity {
                     // 跳转到RadioButton演示界面
                     intent = new Intent(MainActivity.this, RadioButtonActivity.class);
                     break;
+                case R.id.btn_checkBox:
+                    // 跳转到CheckBox演示界面
+                    intent = new Intent(MainActivity.this, CheckBoxActivity.class);
+                    break;
             }
             startActivity(intent);
-
         }
     }
 }
