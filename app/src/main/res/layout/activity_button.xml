@@ -44,7 +44,7 @@
         android:text="@string/bt_test1"
         android:textColor="#fff"
         android:textSize="20sp"
-        android:background="@drawable/bg_btn4"
+        android:background="@drawable/selector_origin"
         android:layout_below="@id/btn_3"
         android:layout_marginTop="10dp"
         android:onClick="showToast"
