@@ -1,4 +1,4 @@
-package com.smart4s.app.merchant.helloworld.ListView;
+package com.smart4s.app.merchant.helloworld.listview;
 
 import android.content.Context;
 import android.util.Log;

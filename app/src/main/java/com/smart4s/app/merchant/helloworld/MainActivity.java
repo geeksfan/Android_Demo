@@ -7,7 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.smart4s.app.merchant.helloworld.ListView.ListViewActivity;
+import com.smart4s.app.merchant.helloworld.gridview.GridViewActivity;
+import com.smart4s.app.merchant.helloworld.listview.ListViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnCheckBox;
     private Button mBtnImageView;
     private Button mBtnListView;
+    private Button mBtnGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckBox = this.<Button>findViewById(R.id.btn_checkBox);
         mBtnImageView = this.<Button>findViewById(R.id.btn_imageView);
         mBtnListView = this.<Button>findViewById(R.id.btn_listView);
+        mBtnGridView = this.<Button>findViewById(R.id.btn_gridView);
         setListener();
     }
 
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckBox.setOnClickListener(onClick);
         mBtnImageView.setOnClickListener(onClick);
         mBtnListView.setOnClickListener(onClick);
+        mBtnGridView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -77,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_listView:
                     // 跳转到ListView演示界面
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                case R.id.btn_gridView:
+                    // 跳转到GridView演示界面
+                    intent = new Intent(MainActivity.this, GridViewActivity.class);
                     break;
             }
             startActivity(intent);
