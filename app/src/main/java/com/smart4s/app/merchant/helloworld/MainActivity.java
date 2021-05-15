@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.smart4s.app.merchant.helloworld.gridview.GridViewActivity;
 import com.smart4s.app.merchant.helloworld.listview.ListViewActivity;
+import com.smart4s.app.merchant.helloworld.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnListView;
     private Button mBtnGridView;
     private Button mBtnScrollView;
+    private Button mBtnRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnListView = this.<Button>findViewById(R.id.btn_listView);
         mBtnGridView = this.<Button>findViewById(R.id.btn_gridView);
         mBtnScrollView = this.<Button>findViewById(R.id.btn_scrollView);
+        mBtnRecyclerView = this.<Button>findViewById(R.id.btn_recyclerView);
         setListener();
     }
 
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnListView.setOnClickListener(onClick);
         mBtnGridView.setOnClickListener(onClick);
         mBtnScrollView.setOnClickListener(onClick);
+        mBtnRecyclerView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -90,8 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
                     break;
                 case R.id.btn_scrollView:
-                    // 跳转到GridView演示界面
+                    // 跳转到ScollView演示界面
                     intent = new Intent(MainActivity.this, ScrollViewActivity.class);
+                    break;
+                case R.id.btn_recyclerView:
+                    // 跳转到RecycleView演示界面
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
             }
             startActivity(intent);
