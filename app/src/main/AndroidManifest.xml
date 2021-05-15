@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".gridview.GridViewActivity"/>
-        <activity android:name=".listview.ListViewActivity"/>
+        <activity android:name=".ScrollViewActivity"></activity>
+        <activity android:name=".gridview.GridViewActivity" />
+        <activity android:name=".listview.ListViewActivity" />
         <activity android:name=".ImageViewActivity" />
         <activity android:name=".CheckBoxActivity" />
         <activity android:name=".RadioButtonActivity" />

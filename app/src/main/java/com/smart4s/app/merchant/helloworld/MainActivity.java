@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnImageView;
     private Button mBtnListView;
     private Button mBtnGridView;
+    private Button mBtnScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView = this.<Button>findViewById(R.id.btn_imageView);
         mBtnListView = this.<Button>findViewById(R.id.btn_listView);
         mBtnGridView = this.<Button>findViewById(R.id.btn_gridView);
+        mBtnScrollView = this.<Button>findViewById(R.id.btn_scrollView);
         setListener();
     }
 
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView.setOnClickListener(onClick);
         mBtnListView.setOnClickListener(onClick);
         mBtnGridView.setOnClickListener(onClick);
+        mBtnScrollView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -85,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_gridView:
                     // 跳转到GridView演示界面
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.btn_scrollView:
+                    // 跳转到GridView演示界面
+                    intent = new Intent(MainActivity.this, ScrollViewActivity.class);
                     break;
             }
             startActivity(intent);
