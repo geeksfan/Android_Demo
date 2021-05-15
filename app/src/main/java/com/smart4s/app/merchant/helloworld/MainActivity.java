@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.smart4s.app.merchant.helloworld.ListView.ListViewActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnTextView;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRadioButton;
     private Button mBtnCheckBox;
     private Button mBtnImageView;
+    private Button mBtnListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton = this.<Button>findViewById(R.id.btn_radioButton);
         mBtnCheckBox = this.<Button>findViewById(R.id.btn_checkBox);
         mBtnImageView = this.<Button>findViewById(R.id.btn_imageView);
+        mBtnListView = this.<Button>findViewById(R.id.btn_listView);
         setListener();
     }
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton.setOnClickListener(onClick);
         mBtnCheckBox.setOnClickListener(onClick);
         mBtnImageView.setOnClickListener(onClick);
+        mBtnListView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -68,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_imageView:
                     // 跳转到ImageView演示界面
                     intent = new Intent(MainActivity.this, ImageViewActivity.class);
+                    break;
+                case R.id.btn_listView:
+                    // 跳转到ListView演示界面
+                    intent = new Intent(MainActivity.this, ListViewActivity.class);
                     break;
             }
             startActivity(intent);
