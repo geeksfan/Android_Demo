@@ -14,21 +14,23 @@ import com.smart4s.app.merchant.helloworld.R;
 
 import org.jetbrains.annotations.NotNull;
 
-public class LinearRecyclerViewActivity extends AppCompatActivity {
+public class HorRecyclerViewActivity extends AppCompatActivity {
 
-    private RecyclerView mRvMain1;
+    private RecyclerView mRvHor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_linear_recycler_view);
-        mRvMain1 = findViewById(R.id.rv_main);
-        mRvMain1.setLayoutManager(new LinearLayoutManager(LinearRecyclerViewActivity.this));
-        mRvMain1.addItemDecoration(new MyDecoration());
-        mRvMain1.setAdapter(new LinearAdapter(LinearRecyclerViewActivity.this, new LinearAdapter.OnItemClickListener() {
+        setContentView(R.layout.activity_hor_recycler_view);
+        mRvHor = this.<RecyclerView>findViewById(R.id.rv_hor);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(HorRecyclerViewActivity.this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRvHor.setLayoutManager(linearLayoutManager);
+        mRvHor.addItemDecoration(new MyDecoration());
+        mRvHor.setAdapter(new HorAdapter(HorRecyclerViewActivity.this, new HorAdapter.OnItemClickListener() {
             @Override
             public void onClick(int pos) {
-                Toast.makeText(LinearRecyclerViewActivity.this, "点击"+pos,Toast.LENGTH_SHORT).show();
+                Toast.makeText(HorRecyclerViewActivity.this, "点击 pos：" + pos, Toast.LENGTH_SHORT).show();
             }
         }));
     }
@@ -37,7 +39,7 @@ public class LinearRecyclerViewActivity extends AppCompatActivity {
         @Override
         public void getItemOffsets(@NonNull @NotNull Rect outRect, @NonNull @NotNull View view, @NonNull @NotNull RecyclerView parent, @NonNull @NotNull RecyclerView.State state) {
             super.getItemOffsets(outRect, view, parent, state);
-            outRect.set(0,0,0,getResources().getDimensionPixelOffset(R.dimen.dividlerHeight));
+            outRect.set(0, 0, getResources().getDimensionPixelOffset(R.dimen.dividlerHeight), 0);
         }
     }
 }
