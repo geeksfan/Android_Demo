@@ -2,17 +2,23 @@ package com.smart4s.app.merchant.helloworld;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.smart4s.app.merchant.helloworld.util.ToastUtil;
 
 public class ToastActivity extends AppCompatActivity {
 
     private Button mBtnToast1;
     private Button mBtnToast2;
     private Button mBtnToast3;
+    private Button mBtnToast4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +27,18 @@ public class ToastActivity extends AppCompatActivity {
         mBtnToast1 = this.<Button>findViewById(R.id.btn_toast_1);
         mBtnToast2 = this.<Button>findViewById(R.id.btn_toast_2);
         mBtnToast3 = this.<Button>findViewById(R.id.btn_toast_3);
+        mBtnToast4 = this.<Button>findViewById(R.id.btn_toast_4);
         OnClick onClick = new OnClick();
         mBtnToast1.setOnClickListener(onClick);
         mBtnToast2.setOnClickListener(onClick);
         mBtnToast3.setOnClickListener(onClick);
+        mBtnToast4.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
         @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
+        public void onClick(View v) {
+            switch (v.getId()) {
                 case R.id.btn_toast_1:
                     Toast.makeText(getApplicationContext(),"Toast",Toast.LENGTH_LONG).show();
                     break;
@@ -40,6 +48,19 @@ public class ToastActivity extends AppCompatActivity {
                     toastCenter.show();
                     break;
                 case R.id.btn_toast_3:
+                    Toast toastCustom = new Toast(getApplicationContext());
+                    LayoutInflater inflater = LayoutInflater.from(ToastActivity.this);
+                    View view = inflater.inflate(R.layout.layout_toast,null);
+                    ImageView imageView = view.<ImageView>findViewById(R.id.iv_toast);
+                    TextView textView = view.<TextView>findViewById(R.id.tv_toast);
+                    imageView.setImageResource(R.drawable.smile);
+                    textView.setText("自定义Toast");
+                    toastCustom.setDuration(Toast.LENGTH_LONG);
+                    toastCustom.setView(view);
+                    toastCustom.show();
+                    break;
+                case R.id.btn_toast_4:
+                    ToastUtil.showMsg(getApplicationContext(),"包装过的Toast");
                     break;
             }
         }
