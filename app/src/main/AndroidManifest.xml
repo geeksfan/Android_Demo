@@ -11,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity android:name=".LifeCycleActivity"></activity>
+        <activity android:name=".TestActivity" android:label="testActivity"></activity>
         <activity android:name=".PopupWindowActivity"></activity>
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
