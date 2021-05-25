@@ -10,7 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HelloWorld">
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".jump.BActivity"
+            android:label="Bb">
+            <intent-filter>
+                <action android:name="com.skyan.test.BActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".jump.AActivity"
+            android:label="A"></activity>
         <activity android:name=".LifeCycleActivity"></activity>
         <activity android:name=".TestActivity" android:label="testActivity"></activity>
         <activity android:name=".PopupWindowActivity"></activity>

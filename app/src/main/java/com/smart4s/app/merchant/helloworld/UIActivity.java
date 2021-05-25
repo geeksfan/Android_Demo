@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.smart4s.app.merchant.helloworld.gridview.GridViewActivity;
+import com.smart4s.app.merchant.helloworld.jump.AActivity;
 import com.smart4s.app.merchant.helloworld.listview.ListViewActivity;
 import com.smart4s.app.merchant.helloworld.recyclerview.RecyclerViewActivity;
 
@@ -31,6 +32,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnPopupWindow;
     private Button mBtnTestActivity;
     private Button mBtnLifeCycle;
+    private Button mBtnJump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopupWindow = this.<Button>findViewById(R.id.btn_popupWindow);
         mBtnTestActivity = this.<Button>findViewById(R.id.btn_testActivity);
         mBtnLifeCycle = this.<Button>findViewById(R.id.btn_lifeCycle);
+        mBtnJump = this.<Button>findViewById(R.id.btn_jump);
         setListener();
     }
 
@@ -77,6 +80,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopupWindow.setOnClickListener(onClick);
         mBtnTestActivity.setOnClickListener(onClick);
         mBtnLifeCycle.setOnClickListener(onClick);
+        mBtnJump.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -156,6 +160,10 @@ public class UIActivity extends AppCompatActivity {
                 case R.id.btn_lifeCycle:
                     // 跳转到LifeCycle演示界面
                     intent = new Intent(UIActivity.this,LifeCycleActivity.class);
+                    break;
+                case R.id.btn_jump:
+                    //跳转到AActivity演示界面
+                    intent = new Intent(UIActivity.this, AActivity.class);
                     break;
             }
             startActivity(intent);
