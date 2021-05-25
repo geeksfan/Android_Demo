@@ -106,6 +106,13 @@
             android:text="ProgressBar ProgressDialog"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btn_customDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CustomDialog"
+            android:textAllCaps="false" />
+
  </LinearLayout>
 
 </ScrollView>
