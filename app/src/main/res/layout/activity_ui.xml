@@ -113,6 +113,13 @@
             android:text="CustomDialog"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btn_popupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PopupWindow"
+            android:textAllCaps="false" />
+
  </LinearLayout>
 
 </ScrollView>
